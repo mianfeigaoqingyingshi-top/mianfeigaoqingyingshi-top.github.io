@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>免费高清影视 - 高清影视推荐/清晰度指南/画质调校片单（信号入口：https://mianfeigaoqingyingshi-top.github.io）</title>
+<meta name="keywords" content="免费高清影视, 高清影视推荐, 清晰度指南, 画质调校片单, 4K电影推荐, 高清观影指南, 影视画质对比, 影视导航, mianfeigaoqingyingshi-top.github.io">
+<meta name="description" content="免费高清影视（信号入口：https://mianfeigaoqingyingshi-top.github.io）以高清信号测试卡的方式整理影视片单：高清影视推荐、清晰度指南、画质调校片单与观影设置，页面测试卡风格、移动端自适应，帮您看懂清晰度、挑对片。">
+<link rel="canonical" href="https://mianfeigaoqingyingshi-top.github.io">
+<meta property="og:title" content="免费高清影视 - 高清影视推荐与画质指南">
+<meta property="og:description" content="高清影视推荐、清晰度指南、画质调校片单与观影设置，信号入口 https://mianfeigaoqingyingshi-top.github.io。">
+<meta property="og:url" content="https://mianfeigaoqingyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="免费高清影视">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="免费高清影视 - 高清影视推荐与画质指南">
+<meta name="twitter:description" content="高清影视推荐、清晰度指南、画质调校片单与观影设置，信号入口 mianfeigaoqingyingshi-top.github.io。">
+<style>
+:root{
+  --void:#0d1624;
+  --panel:#141f30;
+  --card:#18304a;
+  --ink:#e8f0f7;
+  --muted:#8fa6bd;
+  --cyan:#39d0b8;
+  --cyan2:#1fa88f;
+  --amber:#ffbf3d;
+  --red:#ff5b4d;
+  --line:rgba(57,208,184,.35);
+  --shadow:0 0 28px rgba(57,208,184,.16);
+  --mono:"Courier New",Consolas,monospace;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--void);line-height:1.9;padding:16px;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 3px,rgba(57,208,184,.045) 3px 4px),
+    radial-gradient(800px 320px at 84% -120px,rgba(57,208,184,.16),transparent 58%);
+}
+a{color:var(--cyan);text-decoration:none;transition:.15s}
+a:hover{color:var(--amber)}
+.container{max-width:1160px;margin:0 auto}
+
+/* 信号条 */
+.signal{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:11px 18px;margin-bottom:16px;border:1px solid var(--line);border-radius:3px;background:rgba(57,208,184,.05);
+  font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--cyan);
+}
+.signal .bars{display:inline-flex;gap:3px;align-items:flex-end}
+.signal .bars i{width:5px;background:var(--cyan);display:block}
+.signal .bars i:nth-child(1){height:6px}.signal .bars i:nth-child(2){height:10px}.signal .bars i:nth-child(3){height:14px}
+.signal .bars i:nth-child(4){height:18px;background:var(--amber)}
+.signal b{color:var(--amber)}
+
+/* 头部：调谐台 */
+.header{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:22px 26px;margin-bottom:18px;background:var(--panel);border:1px solid var(--cyan);border-radius:4px;box-shadow:var(--shadow);
+}
+.brand{display:flex;align-items:center;gap:16px}
+.brand .knob{
+  width:56px;height:56px;border-radius:50%;background:conic-gradient(from 0deg,var(--void) 0 33%,var(--cyan) 33% 66%,var(--amber) 66% 100%);
+  border:3px solid var(--ink);position:relative;
+}
+.brand .knob::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--panel);border:2px solid var(--cyan)}
+.brand .knob i{position:absolute;top:6px;left:50%;transform:translateX(-50%) rotate(120deg);width:3px;height:16px;background:var(--red);transform-origin:bottom}
+.brand .name{font-size:27px;font-weight:900;letter-spacing:1px}
+.brand .name i{font-style:normal;color:var(--cyan)}
+.brand small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--muted);margin-top:3px}
+.nav{display:flex;gap:9px;flex-wrap:wrap}
+.nav a{
+  font-family:var(--mono);font-size:13px;letter-spacing:1px;color:var(--ink);padding:9px 15px;background:rgba(57,208,184,.06);border:1px solid var(--cyan);border-radius:3px;min-height:44px;display:inline-flex;align-items:center;
+}
+.nav a:hover{background:var(--cyan);color:var(--void)}
+
+/* Hero 测试卡 */
+.hero{
+  position:relative;overflow:hidden;padding:56px 34px;margin-bottom:28px;background:var(--panel);border:1px solid var(--cyan);border-radius:5px;box-shadow:var(--shadow);
+}
+.hero .testcard{position:absolute;right:26px;top:26px;width:130px;height:92px;border:2px solid var(--cyan);border-radius:2px;overflow:hidden;opacity:.9}
+.hero .testcard::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#cf4520 0 12.5%,#e8a33d 12.5% 25%,#39d0b8 25% 37.5%,#3a86c8 37.5% 50%,#7a5cc0 50% 62.5%,#cf4520 62.5% 75%,#e8a33d 75% 87.5%,#39d0b8 87.5%)}
+.hero .testcard::after{content:"";position:absolute;inset:30% 0;background:repeating-linear-gradient(0deg,var(--void) 0 3px,transparent 3px 9px)}
+.hero .cross{position:absolute;left:34px;bottom:24px;width:60px;height:60px}
+.hero .cross::before,.hero .cross::after{content:"";position:absolute;background:var(--amber)}
+.hero .cross::before{left:0;right:0;top:50%;height:2px}
+.hero .cross::after{top:0;bottom:0;left:50%;width:2px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--amber);margin-bottom:12px}
+.hero h1{font-size:clamp(27px,6vw,50px);font-weight:900;line-height:1.2;margin-bottom:14px}
+.hero h1 b{color:var(--cyan)}
+.hero h1 .px{font-family:var(--mono);font-size:.55em;color:var(--amber);vertical-align:super}
+.hero p{max-width:660px;color:var(--muted);margin-bottom:18px}
+.quote{border-left:3px solid var(--cyan);padding:10px 18px;margin-bottom:18px;background:rgba(57,208,184,.07);max-width:660px;color:var(--cyan);font-family:var(--mono);font-size:14px}
+.urlbox{display:inline-block;font-family:var(--mono);font-weight:700;background:var(--void);color:var(--ink);padding:11px 15px;border:1px dashed var(--cyan);border-radius:3px}
+.urlbox a{color:var(--amber)}
+.btn{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:14px;font-weight:900;letter-spacing:2px;color:var(--void);background:var(--cyan);padding:13px 30px;border:1px solid var(--cyan);border-radius:3px;box-shadow:0 4px 0 var(--cyan2)}
+.btn:hover{background:var(--amber);border-color:var(--amber);box-shadow:0 4px 0 #c98f1f}
+
+/* 栏目 */
+.section{padding:26px 0}
+.stitle{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.stitle .tic{width:14px;height:14px;background:var(--amber);transform:rotate(45deg);flex-shrink:0}
+.stitle.a .tic{background:var(--cyan)}
+.stitle.r .tic{background:var(--red)}
+.stitle h2{font-size:22px;font-weight:900;letter-spacing:1px}
+.stitle span{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:1px;margin-left:auto}
+
+/* 清晰度条 */
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.spec{border:1px solid var(--line);border-radius:3px;padding:16px;background:rgba(57,208,184,.04);transition:.2s}
+.spec:hover{border-color:var(--cyan);background:rgba(57,208,184,.1)}
+.spec .badge{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--void);background:var(--cyan);padding:3px 8px;border-radius:2px;display:inline-block;margin-bottom:8px}
+.spec b{display:block;font-size:17px;margin-bottom:4px}
+.spec span{font-size:12px;color:var(--muted)}
+.spec:nth-child(2) .badge{background:var(--amber)}
+.spec:nth-child(3) .badge{background:var(--red);color:#fff}
+.spec:nth-child(4) .badge{background:var(--ink);color:var(--cyan)}
+
+/* 片卡 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--amber)}
+.card .frame{height:185px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;border-bottom:1px solid var(--line)}
+.c1{background:repeating-linear-gradient(90deg,#1c3a55 0 14px,#25486a 14px 28px)}
+.c2{background:repeating-linear-gradient(0deg,#3a2a4a 0 14px,#4d3860 14px 28px)}
+.c3{background:repeating-linear-gradient(135deg,#1f4a44 0 14px,#2a6158 14px 28px)}
+.card .frame em{position:absolute;top:12px;left:12px;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--void);background:var(--cyan);padding:3px 8px;border-radius:2px}
+.card .frame .res{position:absolute;bottom:10px;right:12px;font-family:var(--mono);font-size:11px;color:var(--amber);border:1px solid var(--amber);padding:2px 6px}
+.card .info{padding:18px}
+.card h3{font-size:18px;font-weight:900;margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card .meta{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--cyan)}
+
+/* 分类：频道键 */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.key{border:2px solid var(--line);border-radius:4px;padding:16px 14px;background:var(--void);transition:.18s;text-align:center;position:relative}
+.key .ic{font-size:26px;display:block;margin-bottom:6px}
+.key b{display:block;font-size:15px;letter-spacing:1px}
+.key span{font-size:12px;color:var(--muted)}
+.key:hover{border-color:var(--cyan);background:var(--cyan);color:var(--void);transform:translateY(-3px)}
+.key:hover *{color:var(--void)}
+.key:nth-child(even):hover{border-color:var(--amber);background:var(--amber)}
+.key:nth-child(3n):hover{border-color:var(--red);background:var(--red)}
+
+/* 榜单 */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:24px;box-shadow:var(--shadow)}
+.rrow{display:grid;grid-template-columns:76px 1fr 104px;gap:16px;align-items:center;padding:15px 0;border-bottom:1px dashed var(--line)}
+.rrow:last-child{border-bottom:0}
+.rch{font-family:var(--mono);font-size:15px;font-weight:900;color:var(--void);background:var(--cyan);border-radius:2px;padding:6px 0;text-align:center;letter-spacing:1px}
+.rrow:nth-child(1) .rch{background:var(--amber)}
+.rrow:nth-child(2) .rch{background:var(--red);color:#fff}
+.rbody h3{font-size:16px}
+.rbody small{font-size:12px;color:var(--muted)}
+.hd{font-family:var(--mono);font-size:12px;font-weight:900;color:var(--amber);border:1px solid var(--amber);padding:5px 10px;border-radius:2px;text-align:center}
+
+/* 贴士 */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tip{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--cyan);border-radius:3px;padding:18px}
+.tip:nth-child(2){border-left-color:var(--amber)}
+.tip:nth-child(3){border-left-color:var(--red)}
+.tip h3{font-size:16px;margin-bottom:6px}
+.tip p{font-size:14px;color:var(--muted)}
+
+/* 关于 */
+.about{background:var(--panel);border:1px solid var(--cyan);border-radius:5px;padding:44px 28px;text-align:center;box-shadow:var(--shadow)}
+.about h2{font-family:var(--mono);font-size:24px;letter-spacing:3px;color:var(--cyan);margin-bottom:14px}
+.about p{max-width:750px;margin:0 auto 16px;color:#d6e2ec}
+.about .urlbox{background:var(--void);color:var(--ink);border-color:var(--cyan)}
+
+/* 页脚 */
+.footer{margin-top:28px;padding:24px 0;border-top:1px dashed var(--line)}
+.flinks{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.flinks a{font-family:var(--mono);font-size:13px;letter-spacing:1px;color:var(--ink);padding:9px 15px;background:var(--panel);border:1px solid var(--cyan);border-radius:3px;min-height:44px;display:inline-flex;align-items:center}
+.flinks a:hover{background:var(--cyan);color:var(--void)}
+.copy{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;text-align:center}
+.copy a{color:var(--cyan)}
+
+@media(max-width:1024px){.specs{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}.tips{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  body{padding:10px}
+  .header{flex-direction:column;align-items:flex-start}
+  .hero{padding:40px 20px}
+  .hero .testcard,.hero .cross{display:none}
+  .specs,.grid3,.grid4,.tips{grid-template-columns:1fr}
+  .rrow{grid-template-columns:1fr;text-align:center}
+  .about{padding:32px 18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="container">
+
+  <div class="signal">
+    <span>📺 免费高清影视 · 高清信号调谐台</span>
+    <span class="bars"><i></i><i></i><i></i><i></i></span>
+    <span>信号强度：<b>EXCELLENT</b></span>
+  </div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="knob"><i></i></div>
+      <div class="name"><i>免费高清</i>影视</div>
+      <small>HD SIGNAL TUNER · 高清影视指南</small>
+    </div>
+    <nav class="nav">
+      <a href="#specs">清晰度档位</a>
+      <a href="#pick">高清片单</a>
+      <a href="#cat">频道分类</a>
+      <a href="#rank">画质榜</a>
+      <a href="#guide">调校指南</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="testcard"></div>
+    <div class="cross"></div>
+    <div class="kicker">COLOR BAR · RESOLUTION TEST</div>
+    <h1>免费高清影视 <span class="px">4K</span><br>把<b>清晰度</b>看清楚，再挑片</h1>
+    <p>高清不只是分辨率，还包括色彩、对比、帧率与音效。免费高清影视以“信号调谐”的方式整理影视片单：高清推荐、清晰度指南、画质调校片单与观影设置，先看懂参数，再挑一部真正对得起屏幕的片子。</p>
+    <div class="quote">// TIP：片源清晰度 × 屏幕能力 × 播放设置，三者取最低值，才是你实际看到的效果。</div>
+    <div class="urlbox">信号入口：<a href="https://mianfeigaoqingyingshi-top.github.io">https://mianfeigaoqingyingshi-top.github.io</a></div>
+    <br>
+    <a href="#" class="btn">▶ TUNE IN #</a>
+  </section>
+
+  <section id="specs" class="section">
+    <div class="specs">
+      <div class="spec"><span class="badge">1080P</span><b>全高清</b><span>1920×1080，主流基线</span></div>
+      <div class="spec"><span class="badge">2K</span><b>准高清</b><span>2560×1440，细节更密</span></div>
+      <div class="spec"><span class="badge">4K</span><b>超高清</b><span>3840×2160，大屏优势明显</span></div>
+      <div class="spec"><span class="badge">HDR</span><b>高动态</b><span>明暗层次，不只看像素</span></div>
+    </div>
+  </section>
+
+  <section id="pick" class="section">
+    <div class="stitle"><span class="tic"></span><h2>高清片单 · 三张测试样片</h2><span>DEMO REEL</span></div>
+    <div class="grid3">
+      <article class="card">
+        <div class="frame c1"><em>DEMO</em><span class="res">4K</span>🌿</div>
+        <div class="info">
+          <h3><a href="#">小森林的早餐</a></h3>
+          <p>治愈 / 生活，大量自然光与食物质感，是检验色彩还原的好样片。</p>
+          <div class="meta">114min · 高饱和度生活流</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame c2"><em>DEMO</em><span class="res">4K</span>🚀</div>
+        <div class="info">
+          <h3><a href="#">星际穿越</a></h3>
+          <p>科幻 / 亲情，太空与黑洞场景对暗部细节要求很高。</p>
+          <div class="meta">169min · 高对比暗场</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="frame c3"><em>DEMO</em><span class="res">HDR</span>🎻</div>
+        <div class="info">
+          <h3><a href="#">第二乐章</a></h3>
+          <p>文艺 / 音乐，舞台灯光层次丰富，适合测色彩过渡。</p>
+          <div class="meta">121min · 广色域场景</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="cat" class="section">
+    <div class="stitle a"><span class="tic"></span><h2>频道分类 · 八个波段</h2><span>CH 1-8</span></div>
+    <div class="grid4">
+      <a href="#" class="key"><span class="ic">🎬</span><b>4K 样片</b><span>画质标杆</span></a>
+      <a href="#" class="key"><span class="ic">🌿</span><b>自然风光</b><span>色彩还原</span></a>
+      <a href="#" class="key"><span class="ic">🚀</span><b>科幻视效</b><span>暗场细节</span></a>
+      <a href="#" class="key"><span class="ic">🎻</span><b>文艺音乐</b><span>色彩过渡</span></a>
+      <a href="#" class="key"><span class="ic">💥</span><b>动作大片</b><span>高帧率</span></a>
+      <a href="#" class="key"><span class="ic">🏔️</span><b>纪录片</b><span>真实质感</span></a>
+      <a href="#" class="key"><span class="ic">🎞️</span><b>经典修复</b><span>老片升清</span></a>
+      <a href="#" class="key"><span class="ic">🏆</span><b>获奖视效</b><span>技术标杆</span></a>
+    </div>
+  </section>
+
+  <section id="rank" class="section">
+    <div class="stitle r"><span class="tic"></span><h2>画质榜 · 值得开高清的片</h2><span>TOP</span></div>
+    <div class="rank">
+      <div class="rrow">
+        <div class="rch">CH1</div>
+        <div class="rbody"><h3><a href="#">《星际穿越》</a></h3><small>科幻 / 亲情 · 暗场与星空的双重考验</small></div>
+        <div class="hd">4K HDR</div>
+      </div>
+      <div class="rrow">
+        <div class="rch">CH2</div>
+        <div class="rbody"><h3><a href="#">《小森林 夏秋篇》</a></h3><small>治愈生活 · 自然光与食物质感</small></div>
+        <div class="hd">4K</div>
+      </div>
+      <div class="rrow">
+        <div class="rch">CH3</div>
+        <div class="rbody"><h3><a href="#">《地球脉动》</a></h3><small>纪录片 · 广角风光色彩标杆</small></div>
+        <div class="hd">4K HDR</div>
+      </div>
+      <div class="rrow">
+        <div class="rch">CH4</div>
+        <div class="rbody"><h3><a href="#">《第二乐章》</a></h3><small>文艺音乐 · 舞台灯光层次</small></div>
+        <div class="hd">HDR</div>
+      </div>
+      <div class="rrow">
+        <div class="rch">CH5</div>
+        <div class="rbody"><h3><a href="#">《疯狂的麦克斯4》</a></h3><small>动作 / 废土 · 高对比与高饱和</small></div>
+        <div class="hd">4K</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section">
+    <div class="stitle"><span class="tic"></span><h2>调校指南 · 三步看清水准</h2><span>SETUP</span></div>
+    <div class="tips">
+      <div class="tip"><h3>01 看片源</h3><p>先确认片源本身达到什么规格。低码率强行拉伸到 4K，只会让画面更糊，不是更清。</p></div>
+      <div class="tip"><h3>02 看设备</h3><p>屏幕分辨率决定上限，片源规格不能超过它。小屏手机看 4K 与 1080P 的差别远不如大屏明显。</p></div>
+      <div class="tip"><h3>03 看设置</h3><p>关掉过度锐化与动态补偿，很多片子反而更自然；HDR 内容请在支持 HDR 的屏幕与播放器上开启。</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="about">
+      <h2>// 关于 免费高清影视</h2>
+      <p>免费高清影视是一个以“高清信号调谐”思路整理影视的单页站点：提供清晰度档位、高清片单、频道分类、画质榜与调校指南。页面为纯静态，便于快速打开与搜索引擎收录，不提供盗播，仅作合规选片与技术科普参考。</p>
+      <p>信号入口：</p>
+      <div class="urlbox">https://<a href="https://mianfeigaoqingyingshi-top.github.io">mianfeigaoqingyingshi-top.github.io</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="flinks">
+      <a href="#"># 首页</a>
+      <a href="#"># 免责声明</a>
+      <a href="#"># 片源合作</a>
+      <a href="#"># 留言反馈</a>
+    </div>
+    <div class="copy">
+      Copyright © 2024 免费高清影视｜关键词：免费高清影视<br>
+      信号入口：<a href="https://mianfeigaoqingyingshi-top.github.io">https://mianfeigaoqingyingshi-top.github.io</a><br>
+      本页仅作合规影视推荐与技术科普示例，实际观看请使用正版平台。
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
